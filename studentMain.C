@@ -1,31 +1,4 @@
-#include <utility>
-#include <string>
-#include <iostream>
-#include <vector>
-#include <map>
-
-using namespace std;
-
-const int NUM_STUDENTS = 5;
-const int NUM_BOARDS = 5;
-
-class Student
-{
- public:
-	Student(); 													//student default constructor
-	Student(string name);										//student constructor
-	void setStudentBoardPreference(string board, int value); 	//set Student Preferences for boards
-	void setBoardStudentPreference(string board, int value); 	//set board preferences for student
-	void sort(); 												//sort the rankings to create the rankings vector
- private: 
-	vector <map <string, int> > studentRank; 					//A list of how the student ranks each of the boards
-	vector <map <string, int> > boardRank;						//A list of how the boards rank the student
-	vector <string> rankings; 									//A list of all the boards ranked best to worst for the student
-	int boardSelection; 										//An int holding the index of the board in rankings for the current match
-	static vector <pair<Student, string> > pairing;				//a list holding all the currently decided student board rankings
-};
-
-
+#include "student.h"
 
 vector <Student> sList; //list of all the students
 vector <string> bList; //list of all the boards
